@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LControl</string>
+    <string name="toast_bt_already_enabled">Bluetooth already enabled!</string>
+    <string name="toast_bt_already_paired">Bluetooth already paired!</string>
+    <string name="toast_bt_enable_first">Please enable bluetooth first.</string>
+    <string name="toast_bt_cant_pair">Connecting was not possible, try
+	    another device, or make sure an already paired device is near.</string>
+    <string name="txt_none_paired">No devices previously paired.</string>
+    <string name="txt_scanning">Scanning for devices</string>
+</resources>

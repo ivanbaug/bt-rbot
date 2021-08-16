@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.ivanotes.lcontrol.Controlling">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_arms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/container_buttons"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <FrameLayout
+                android:id="@+id/cntnr_arm_left"
+                android:layout_width="110dp"
+                android:layout_height="180dp"
+                android:orientation="vertical"
+                android:layout_marginTop="50dp"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/cntnr_arm_right"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <SeekBar
+                    android:id="@+id/sb_arm_left"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:max="94"
+                    android:min="00"
+                    android:progressDrawable="@layout/progress_seekbar"
+                    android:rotation="270"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/ic_arm_l" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/cntnr_arm_right"
+                android:layout_width="110dp"
+                android:layout_height="180dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/cntnr_arm_left"
+                app:layout_constraintLeft_toRightOf="@id/cntnr_arm_left"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cntnr_arm_left">
+
+                <SeekBar
+                    android:id="@+id/sb_arm_right"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:max="90"
+                    android:min="0"
+                    android:progressDrawable="@layout/progress_seekbar"
+                    android:rotation="270"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/ic_arm_r" />
+            </FrameLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_arms"
+            app:layout_constraintBottom_toTopOf="@id/container_speed">
+            <ImageButton
+                android:id="@+id/btn_fwd"
+                android:src="@drawable/ic_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/container_buttons"
+                app:layout_constraintLeft_toLeftOf="@id/container_buttons"
+                app:layout_constraintRight_toRightOf="@id/container_buttons"/>
+
+            <ImageButton
+                android:id="@+id/btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_left"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="@id/container_buttons"
+                app:layout_constraintRight_toLeftOf="@id/btn_fwd"
+                app:layout_constraintTop_toBottomOf="@id/btn_fwd" />
+
+            <ImageButton
+                android:id="@+id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@id/btn_fwd"
+                app:layout_constraintRight_toRightOf="@id/container_buttons"
+                app:layout_constraintTop_toBottomOf="@id/btn_fwd" />
+            <ImageButton
+                android:id="@+id/btn_bwd"
+                android:src="@drawable/ic_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_left"
+                app:layout_constraintLeft_toLeftOf="@id/container_buttons"
+                app:layout_constraintRight_toRightOf="@id/container_buttons"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/container_buttons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/tv_speed_info"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Velocidad:"
+                />
+            <SeekBar
+                android:id="@+id/sb_speed"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:thumb="@drawable/ico_speed"
+                android:splitTrack="false"
+                android:min="0"
+                android:max="115" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
